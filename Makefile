@@ -3,17 +3,17 @@ CC=gcc
 all: abuse hello math inline
 
 abuse: abuse.c
-	@$(CC) $^ -o $@
+	$(CC) $^ -o $@
 
 hello: hello.c
-	@$(CC) -include lib.h $^ -o $@ -w
+	-@$(CC) -include lib.h $^ -o $@ -w
 
 math: math.c
-	@$(CC) -include lib.h $^ -o $@
+	$(CC) $^ -o $@
 
 inline: inline.c
-	@$(CC) $^ -o working_inline
-	@$(CC) $^ -O3 -o broken_inline
+	$(CC) $^ -o working_$@
+	$(CC) $^ -O3 -o broken_$@
 
 clean:
 	-@rm abuse hello math
