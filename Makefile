@@ -1,6 +1,6 @@
 CC=gcc
 
-all: abuse hello
+all: abuse hello math
 
 abuse: abuse.c
 	@$(CC) $^ -o $@
@@ -8,5 +8,8 @@ abuse: abuse.c
 hello: hello.c
 	@$(CC) -include lib.h $^ -o $@ -w
 
+math: math.c
+	@$(CC) -include lib.h $^ -o $@
+
 clean:
-	-@rm abuse hello
+	-@rm abuse hello maths
