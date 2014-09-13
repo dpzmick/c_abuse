@@ -3,7 +3,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-void fun(int a) {
+void fun() {
     asm( "movl $1, %eax");
 }
 
@@ -17,7 +17,7 @@ int main(int argc, const char *argv[])
     int b = atoi("11");
     int sum = adder(a, b);
 
-    fun(a);
+    fun();
 
     printf("%d + %d = %d\n", a, b, sum);
 
